@@ -11,7 +11,7 @@ export default async function UserInfo({ userId }) {
   const user = await response.rows[0];
   return (
     <Suspense fallback={<LoadingUserInfo />}>
-      <Link href={`/users/${userId}`}>
+      <Link href={`/users/${user.id}`}>
         {/*<Image src={user.imageurl} alt="profile image" width={50} height={50} />*/}
         <p>{user.username}</p>
       </Link>
